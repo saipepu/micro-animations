@@ -1,16 +1,13 @@
 {
   "files": {
-    "main.css": "/micro-animations/static/css/main.073c9b0a.css",
-    "main.js": "/micro-animations/static/js/main.9a39cb2f.js",
-    "static/js/787.761f2d0b.chunk.js": "/micro-animations/static/js/787.761f2d0b.chunk.js",
-    "static/media/logo.svg": "/micro-animations/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "main.css": "/micro-animations/static/css/main.8983e4cb.css",
+    "main.js": "/micro-animations/static/js/main.02512823.js",
     "index.html": "/micro-animations/index.html",
-    "main.073c9b0a.css.map": "/micro-animations/static/css/main.073c9b0a.css.map",
-    "main.9a39cb2f.js.map": "/micro-animations/static/js/main.9a39cb2f.js.map",
-    "787.761f2d0b.chunk.js.map": "/micro-animations/static/js/787.761f2d0b.chunk.js.map"
+    "main.8983e4cb.css.map": "/micro-animations/static/css/main.8983e4cb.css.map",
+    "main.02512823.js.map": "/micro-animations/static/js/main.02512823.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.9a39cb2f.js"
+    "static/css/main.8983e4cb.css",
+    "static/js/main.02512823.js"
   ]
 }
