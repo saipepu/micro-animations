@@ -1,0 +1,222 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", "sans-serif";
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background-color: #ffffff;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  transform-origin: top;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: #000000;
+}
+.container .label_container {
+  width: 300px;
+  display: grid;
+}
+.container h1 {
+  font: 800 80px "Roboto", sans-serif;
+  text-align: left;
+  text-transform: uppercase;
+  transition: all 0.3s ease-out;
+  margin: auto;
+  color: #ffffff;
+  cursor: pointer;
+  transform-origin: left;
+}
+.container h1:hover {
+  transform: scaleX(1.2);
+}
+
+.page_container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.page_container .inspect_container {
+  transition: all 0.3s ease-in-out;
+  height: 500px;
+}
+.page_container .inspect_container .backward_btn {
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease-in-out;
+}
+.page_container .inspect_container .backward_btn:hover {
+  opacity: 0.5;
+}
+.page_container .inspect_container .demo, .page_container .inspect_container .inspect {
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
+  -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+          clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  transition-delay: 1s;
+  transition: all 0.3s cubic-bezier(0.96, -0.01, 0.58, 1);
+}
+.page_container .inspect_container .demo {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.page_container .inspect_container .demo .canvas {
+  position: relative;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.page_container .inspect_container .demo .canvas .labelContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.page_container .inspect_container .demo .canvas .labelContainer p {
+  font: 800 20px "Roboto", sans-serif;
+  margin-right: 5px;
+}
+.page_container .inspect_container .demo .canvas .labelContainer h1 {
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+  color: #000000;
+  transition: all 0.3s ease-in-out;
+  transform-origin: left;
+}
+.page_container .inspect_container .demo .canvas .labelContainer h1:hover {
+  transform: scaleX(1.2);
+}
+.page_container .inspect_container .inspect {
+  max-width: 50%;
+  height: 100%;
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.page_container .inspect_container .inspect .box {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding: 100px;
+  color: #ffffff;
+}
+.page_container .inspect_container .inspect .box .title {
+  font: lighter 40px "Roboto Slab", sans-serif;
+  margin-bottom: 30px;
+}
+.page_container .inspect_container .inspect .box .toggle_box_container {
+  width: 100%;
+  max-width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.page_container .inspect_container .inspect .box .toggle_box_container .toggle_box {
+  cursor: pointer;
+  height: 50px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.page_container .inspect_container .inspect .box .toggle_box_container .toggle_box .name {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 10px;
+  font: 400 20px "Roboto Slab", sans-serif;
+  background-color: #716F6F;
+}
+.page_container .inspect_container .inspect .box .toggle_box_container .toggle_box .button {
+  height: 100%;
+  display: grid;
+  padding: 0px 5px;
+  background-color: #404040;
+}
+.page_container .inspect_container .inspect .box .toggle_box_container .toggle_box .button:hover {
+  opacity: 0.5;
+}
+.page_container .inspect_container .inspect .box .toggle_box_container .toggle_box .button img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin: auto;
+}
+.page_container .inspect_container .inspect .box .toggle_box_container .snippet {
+  width: 100%;
+  height: 400px;
+  background-color: #C4C4C4;
+  transition: all 0.3s ease-in-out;
+  height: 0px;
+  overflow: scroll;
+  margin-bottom: 30px;
+}
+.page_container .inspect_container .page_transition {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgb(0, 0, 0);
+  z-index: 5;
+  transition: all 1s ease-in-out;
+  -webkit-animation: pageTransition 1s ease-in-out;
+          animation: pageTransition 1s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes pageTransition {
+  0% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  50% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  100% {
+    -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+            clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes pageTransition {
+  0% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  50% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  100% {
+    -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+            clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  }
+}/*# sourceMappingURL=style.module.css.map */
