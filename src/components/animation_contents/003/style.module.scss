@@ -22,6 +22,7 @@
     height: 20px;
     border-radius: 100%;
     background: v.$tertiary;
+    transition: 'all 0.2s ease-out';
     transition-timing-function: ease-out;
     transform: translate(-50%, -50%);
     mix-blend-mode: difference;
@@ -63,6 +64,7 @@
     border-radius: 100%;
     background: v.$tertiary;
     // background: blue;
+    transition: 'all 0.2s ease-out';
     transition-timing-function: ease-out;
     transform: translate(-50%, -50%);
     mix-blend-mode: difference;
@@ -122,8 +124,14 @@
                   width: fit-content;
                   mix-blend-mode: difference;
                   cursor: pointer;
-                  color: v.$tertiary;
-                  background: v.$secondary;
+                  background: transparent;
+                  color: v.$secondary;
+                  transition: all 0.2s ease-in-out;
+
+                  &:hover {
+                    color: v.$tertiary;
+                    background: v.$secondary;
+                  }
                 }
 
         }
