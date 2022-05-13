@@ -94,7 +94,7 @@ const Page003 = () => {
         <div className={styles.inspect} style={animate ? fullPath: {}}>
           <div className={styles.box}>
             <div className={styles.title}>
-              Solid on hover
+              Cursor Invert
             </div>
             <div className={styles.toggle_box_container}>
               <div className={styles.toggle_box} onClick={() => handleToggle('template')}>

@@ -3,7 +3,7 @@
 .container {
   width: 100%;
   height: 500px;
-  background-color: v.$secondary;
+  background-color: v.$tertiary;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
   transform-origin: top;
@@ -14,19 +14,21 @@
       cursor: pointer;
       position: relative;
       text-transform: uppercase;
-      color: v.$tertiary;
+      color: v.$secondary;
       font: 800 80px 'Roboto',sans-serif;
+      padding: 20px;
 
       &::after {
         content: '';
         position: absolute;
-        top: 90%;
+        top: 0%;
         right: 0;
         width: 0%;
-        height: 4px;
+        height: 100%;
         background: v.$tertiary;
         transform-origin: left;
-        transition: all 0.3s ease-in-out;
+        transition: all 0.5s ease-in-out;
+        mix-blend-mode: difference;
       }
       &:hover::after {
         left: 0;
@@ -72,6 +74,10 @@
         width: 50%;
         @include v.flex(column, flex-start, center);
 
+        > * {
+          padding: 0px 5px;
+        }
+
         .demo1 {
           cursor: pointer;
           position: relative;
@@ -79,21 +85,45 @@
           color: v.$secondary;
           font: lighter 25px 'Roboto',sans-serif;
           margin-bottom: 10px;
+          // padding: 0px 5px;
+          overflow: hidden;
+
+          &:hover {
+            color: v.$tertiary;
+          }
     
           &::after {
             content: '';
             position: absolute;
-            top: 90%;
+            top: 0%;
             right: 0;
             width: 0%;
-            height: 2px;
-            background: v.$secondary;
+            height: 100%;
+            background: v.$tertiary;
             transform-origin: left;
-            transition: all 0.3s ease-in-out;
+            transition: all 0.5s ease-in-out;
+            mix-blend-mode: difference;
           }
           &:hover::after {
             left: 0;
             width: 100%;
+          }
+          &::before {
+            content: '001';
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            top: -50%;
+            color: v.$secondary;
+            transition: all 0.8s ease-in-out;
+          }
+          &:hover::before {
+            animation: animateDemo1 0.3s ease-in-out;
+            animation-fill-mode: forwards;
+          }
+          @keyframes animateDemo1 {
+            0% { top: -50% }
+            100% { top: 50% }
           }
         }
         .demo2 {
@@ -107,12 +137,13 @@
           &::after,&::before {
             content: '';
             position: absolute;
-            top: 90%;
+            top: 0;
             right: 0;
             width: 0%;
-            height: 2px;
-            background: v.$secondary;
-            transition: all 0.3s ease-in-out
+            height: 100%;
+            background: v.$tertiary;
+            transition: all 0.3s ease-in-out;
+            mix-blend-mode: difference;
           }
           &:hover::after {
             animation: animateDemo2 0.3s ease-in-out;
@@ -143,51 +174,26 @@
           color: v.$secondary;
           font: lighter 25px 'Roboto',sans-serif;
           margin-bottom: 10px;
-    
-          &::after,&::before {
-            content: '';
-            position: absolute;
-            top: 90%;
-            width: 0%;
-            right: 50%;
-            height: 2px;
-            background: v.$secondary;
-            transition: all 0.3s ease-in-out;
-          }
-          &:hover::after,&:hover::before{
-            width: 50%;
-          }
-          &:hover::after {
-            right: 0;
-          }
-        }
-        .demo4 {
-          height: fit-content;
-          cursor: pointer;
-          position: relative;
-          text-transform: uppercase;
-          color: v.$secondary;
-          font: lighter 25px 'Roboto',sans-serif;
-          margin-bottom: 10px;
           overflow-x: hidden;
     
           &::after,&::before {
             content: '';
             position: absolute;
-            top: 88%;
+            top: 0;
             width: 100%;
-            height: 1px;
-            opacity: 0;
-            background: v.$secondary;
+            height: 50%;
+            opacity: 1;
+            background: v.$tertiary;
             transition: all 0.8s ease-in-out;
+            mix-blend-mode: difference;
           }
           &::after {
             left: -100%;
-            top: 88%;
+            top: 0;
           }
           &::before {
             left: 100%;
-            top: 98%;
+            top: 50%;
           }
           &:hover::after {
             opacity: 1;

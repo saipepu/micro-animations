@@ -6,10 +6,14 @@ import upToggle from '../../../assets/icons/caret-up.png'
 import backward from '../../../assets/icons/backward.png'
 import { useNavigate } from 'react-router-dom'
 
-const Page002 = () => {
+const Page006 = () => {
   const navigate = useNavigate();
   const [animate, setAnimate] = useState(false)
   const [toggleName, setToggleName] = useState('style')
+  const [scale, setScale] = useState(false);
+  const [isHover, setIsHover ] = useState(false);
+  const [posY, setPosY] = useState(0)
+  const [posX, setPosX] = useState(0)
 
   useEffect(() => {
     setAnimate(true)
@@ -21,7 +25,6 @@ const Page002 = () => {
     height: '100vh',
     transformOrigin: 'top',
     transition: 'all 0.3s ease-in-out',
-    zIndex: 2
   }
   const fullPath = {
     transitionDelay: '0.9s',
@@ -36,42 +39,62 @@ const Page002 = () => {
     }
   }
 
+
+  const handleHover = (e) => {
+    console.log(e.target);
+    console.log(e.pageX)
+    console.log(e.pageY);
+    setPosX(e.pageX);
+    setPosY(e.pageY);
+    setIsHover(true);
+  }
+
+  const demoCursorBig = {
+    top: `${posY}px`,
+    left: `${posX}px`,
+    transform: 'scale(5)',
+    tranitionDelay: 0.2,
+    transition: 'all 0.2s ease-out',
+    transitionTimingFunction: "ease-out",
+  }
+  const demoCursorSmall = {
+    top: `${posY}px`,
+    left: `${posX}px`,
+    tranitionDelay: 0.2,
+    transition: 'all 0.2s ease-out',
+    transitionTimingFunction: "ease-out",
+  }
+
   return (
-    <div className={styles.page_container}>
+    <div className={styles.page_container} onMouseMove={(e) => handleHover(e)}>
       <Header />
-      <div className={`${styles.container} ${styles.inspect_container}`} style={animate ? inspectStyle: {}}>
+      <div className={styles.demo_cursor} style={isHover ? scale ? demoCursorBig : demoCursorSmall : {display: 'none'}}></div>
+      <div className={`${styles.container} ${styles.inspect_container}`} style={animate ? inspectStyle: {}} >
         <div className={styles.page_transition}>
 
         </div>
-        <div className={styles.demo} style={animate ? fullPath : {}}>
+        <div className={styles.demo} style={animate ? fullPath : {}} >
           <div className={styles.backward_btn} onClick={() => navigate('/')}>
             <img src={backward} alt="backward-png" />
           </div>
-          <div className={styles.canvas} >
-            <div className={styles.labelContainer}>
-            <p>1.</p>
-              <h1 className={styles.demoText}>
-                Home
-              </h1>
-            </div>
-            <div className={styles.labelContainer}>
-            <p>2.</p>
-              <h1 className={styles.demoText}>
-                About
-              </h1>
-            </div>
-            <div className={styles.labelContainer}>
-            <p>2.</p>
-              <h1 className={styles.demoText}>
-                Contact
-              </h1>
+          <div className={styles.backward_btn} onClick={() => navigate('/')}>
+            <img src={backward} alt="backward-png" />
+          </div>
+          <div className={styles.canvas}>
+            <div className={styles.label_container}>
+              <h2>
+                Quote !
+              </h2>
+              <p>“Wake up to reality! Nothing ever goes as planned in this world. The longer you live, the more you realize that in this reality only pain, suffering and futility exist.”<br /><span> - Madara Uchiha</span></p>
+              <button onMouseOver={() => setScale(true)} onMouseLeave={() => setScale(false)}>Read more</button>
             </div>
           </div>
+
         </div>
         <div className={styles.inspect} style={animate ? fullPath: {}}>
           <div className={styles.box}>
             <div className={styles.title}>
-              Stretch X
+              Cursor Invert
             </div>
             <div className={styles.toggle_box_container}>
               <div className={styles.toggle_box} onClick={() => handleToggle('template')}>
@@ -114,4 +137,4 @@ const Page002 = () => {
   )
 }
 
-export default Page002
+export default Page006

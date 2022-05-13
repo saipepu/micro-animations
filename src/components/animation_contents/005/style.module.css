@@ -17,41 +17,29 @@
   align-items: center;
   justify-content: center;
 }
-.container:hover .demo_cursor {
-  display: block;
+.container .label_container h1 {
+  cursor: pointer;
+  position: relative;
+  text-transform: uppercase;
+  color: #000000;
+  font: 800 80px "Roboto", sans-serif;
+  padding: 20px;
 }
-.container .demo_cursor {
-  pointer-events: none;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+.container .label_container h1::after {
+  content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  border-radius: 100%;
+  top: 0%;
+  right: 0;
+  width: 0%;
+  height: 100%;
   background: #ffffff;
-  transition: "all 0.2s ease-out";
-  transition-timing-function: ease-out;
-  transform: translate(-50%, -50%);
+  transform-origin: left;
+  transition: all 0.5s ease-in-out;
   mix-blend-mode: difference;
 }
-.container .label_container {
-  width: 300px;
-  display: grid;
-  background: transparent;
-}
-.container .label_container h1 {
-  font: 800 80px "Roboto", sans-serif;
-  text-align: left;
-  text-transform: uppercase;
-  transition: all 0.3s ease-out;
-  margin: auto;
-  color: #000000;
-  cursor: pointer;
-  transform-origin: left;
+.container .label_container h1:hover::after {
+  left: 0;
+  width: 100%;
 }
 
 .page_container {
@@ -63,27 +51,7 @@
   align-items: center;
   justify-content: flex-start;
 }
-.page_container .demo_cursor {
-  pointer-events: none;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 3;
-  width: 10px;
-  height: 10px;
-  border-radius: 100%;
-  background: #ffffff;
-  transition: "all 0.2s ease-out";
-  transition-timing-function: ease-out;
-  transform: translate(-50%, -50%);
-  mix-blend-mode: difference;
-}
 .page_container .inspect_container {
-  position: relative;
   transition: all 0.3s ease-in-out;
   height: 500px;
 }
@@ -99,6 +67,7 @@
   opacity: 0.5;
 }
 .page_container .inspect_container .demo, .page_container .inspect_container .inspect {
+  position: relative;
   flex-grow: 1;
   width: 100%;
   height: 100%;
@@ -117,44 +86,179 @@
 .page_container .inspect_container .demo .canvas {
   position: relative;
   width: 50%;
-  z-index: 5;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
 }
-.page_container .inspect_container .demo .canvas .label_container {
-  z-index: 5;
+.page_container .inspect_container .demo .canvas > * {
+  padding: 0px 5px;
 }
-.page_container .inspect_container .demo .canvas .label_container h2 {
-  z-index: 9999;
-  font: 800 24px "Roboto", sans-serif;
-  margin-bottom: 10px;
-}
-.page_container .inspect_container .demo .canvas .label_container p {
-  font: 400 16px "Roboto", sans-serif;
-  margin-bottom: 10px;
-}
-.page_container .inspect_container .demo .canvas .label_container p span {
-  font-weight: lighter;
-  font-style: italic;
-}
-.page_container .inspect_container .demo .canvas .label_container button {
-  padding: 2px 5px;
-  border: none;
-  font: 400 16px "Roboto", sans-serif;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  mix-blend-mode: difference;
+.page_container .inspect_container .demo .canvas .demo1 {
   cursor: pointer;
-  background: transparent;
+  position: relative;
+  text-transform: uppercase;
   color: #000000;
-  transition: all 0.2s ease-in-out;
+  font: lighter 25px "Roboto", sans-serif;
+  margin-bottom: 10px;
+  overflow: hidden;
 }
-.page_container .inspect_container .demo .canvas .label_container button:hover {
+.page_container .inspect_container .demo .canvas .demo1:hover {
   color: #ffffff;
-  background: #000000;
+}
+.page_container .inspect_container .demo .canvas .demo1::after {
+  content: "";
+  position: absolute;
+  top: 0%;
+  right: 0;
+  width: 0%;
+  height: 100%;
+  background: #ffffff;
+  transform-origin: left;
+  transition: all 0.5s ease-in-out;
+  mix-blend-mode: difference;
+}
+.page_container .inspect_container .demo .canvas .demo1:hover::after {
+  left: 0;
+  width: 100%;
+}
+.page_container .inspect_container .demo .canvas .demo1::before {
+  content: "001";
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: -50%;
+  color: #000000;
+  transition: all 0.8s ease-in-out;
+}
+.page_container .inspect_container .demo .canvas .demo1:hover::before {
+  -webkit-animation: animateDemo1 0.3s ease-in-out;
+          animation: animateDemo1 0.3s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+@-webkit-keyframes animateDemo1 {
+  0% {
+    top: -50%;
+  }
+  100% {
+    top: 50%;
+  }
+}
+@keyframes animateDemo1 {
+  0% {
+    top: -50%;
+  }
+  100% {
+    top: 50%;
+  }
+}
+.page_container .inspect_container .demo .canvas .demo2 {
+  cursor: pointer;
+  position: relative;
+  text-transform: uppercase;
+  color: #000000;
+  font: lighter 25px "Roboto", sans-serif;
+  margin-bottom: 10px;
+}
+.page_container .inspect_container .demo .canvas .demo2::after, .page_container .inspect_container .demo .canvas .demo2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0%;
+  height: 100%;
+  background: #ffffff;
+  transition: all 0.3s ease-in-out;
+  mix-blend-mode: difference;
+}
+.page_container .inspect_container .demo .canvas .demo2:hover::after {
+  -webkit-animation: animateDemo2 0.3s ease-in-out;
+          animation: animateDemo2 0.3s ease-in-out;
+}
+.page_container .inspect_container .demo .canvas .demo2:hover::before {
+  left: 0;
+  width: 100%;
+  transition: all 0.15s ease-in-out;
+  transition-delay: 0.4s;
+}
+@-webkit-keyframes animateDemo2 {
+  0% {
+    left: 0;
+    width: 0%;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    right: 0;
+    width: 0%;
+  }
+}
+@keyframes animateDemo2 {
+  0% {
+    left: 0;
+    width: 0%;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    right: 0;
+    width: 0%;
+  }
+}
+@-webkit-keyframes animateDemo2-1 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes animateDemo2-1 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.page_container .inspect_container .demo .canvas .demo3 {
+  cursor: pointer;
+  position: relative;
+  text-transform: uppercase;
+  color: #000000;
+  font: lighter 25px "Roboto", sans-serif;
+  margin-bottom: 10px;
+  overflow-x: hidden;
+}
+.page_container .inspect_container .demo .canvas .demo3::after, .page_container .inspect_container .demo .canvas .demo3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 50%;
+  opacity: 1;
+  background: #ffffff;
+  transition: all 0.8s ease-in-out;
+  mix-blend-mode: difference;
+}
+.page_container .inspect_container .demo .canvas .demo3::after {
+  left: -100%;
+  top: 0;
+}
+.page_container .inspect_container .demo .canvas .demo3::before {
+  left: 100%;
+  top: 50%;
+}
+.page_container .inspect_container .demo .canvas .demo3:hover::after {
+  opacity: 1;
+  left: 100%;
+}
+.page_container .inspect_container .demo .canvas .demo3:hover::before {
+  opacity: 1;
+  left: -100%;
 }
 .page_container .inspect_container .inspect {
   max-width: 50%;
