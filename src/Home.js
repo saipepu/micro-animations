@@ -5,6 +5,7 @@ import H003 from './components/animation_contents/003';
 import H004 from './components/animation_contents/004';
 import H005 from './components/animation_contents/005';
 import H006 from './components/animation_contents/006';
+import H007 from './components/animation_contents/007'
 import Layout from './Layout/Layout';
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
       <H004 />
       <H005 />
       <H006 />
+      <H007 />
     </Layout>
   )
 }

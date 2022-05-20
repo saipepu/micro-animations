@@ -5,6 +5,7 @@ import Page003 from './components/animation_contents/003/page';
 import Page004 from './components/animation_contents/004/page';
 import Page005 from './components/animation_contents/005/page';
 import Page006 from './components/animation_contents/006/page';
+import Page007 from './components/animation_contents/007/page';
 import Home from './Home';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/004" exact element={<Page004 />} />
         <Route path="/005" exact element={<Page005 />} />
         <Route path="/006" exact element={<Page006 />} />
+        <Route path="/007" exact element={<Page007 />} />
       </Routes>
     </BrowserRouter>
     </>

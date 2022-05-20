@@ -1,0 +1,42 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", "sans-serif";
+}
+
+.word {
+  width: 100%;
+  position: relative;
+  transition: transform 1s;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform-origin: origin;
+}
+.word:hover .letter {
+  transition: all 0.4s;
+  transform: rotateX(-90deg);
+}
+.word .letter {
+  padding: 0px 3px;
+  display: inline-block;
+  position: relative;
+  margin: auto;
+  font: 800 80px "Roboto", sans-serif;
+  transition: all 0.4s;
+  transform-style: preserve-3d;
+  transform-origin: bottom;
+  transform: rotateX(0deg);
+}
+.word .letter::after {
+  padding: 0px 3px;
+  content: attr(data-char);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.4s;
+  transform-origin: bottom;
+  color: #ffffff;
+  background: #000000;
+  transform: rotateX(90deg) translateZ(80px);
+}/*# sourceMappingURL=style.css.map */
