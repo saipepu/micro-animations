@@ -9,7 +9,6 @@
   position: relative;
   width: 100%;
   height: 500px;
-  background-color: #ffffff;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
   transform-origin: top;
@@ -17,96 +16,22 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  background: #ffffff;
+}
+.container .label_container {
+  width: 300px;
+  display: grid;
 }
 .container h1 {
-  font: 800 80px "Roboto";
-}
-.container .labelContainer {
-  width: 20vw;
-  height: 60px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  transition: all 0.3s cubic-bezier(1, 0.14, 0.53, 0.97);
-  transition-delay: 0.3s;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: start;
-  cursor: pointer;
-}
-.container .index {
-  position: relative;
-  font: 400 50px "Roboto", sans-serif;
-  color: black;
-  white-space: nowrap;
-  transition: all 0.8s ease-out;
-  opacity: 0.05;
-  transform: translateX(-30px);
-}
-.container .labelContainer:hover .index {
-  transform: translateX(0);
-  transition: all 0.8s ease-out;
-  opacity: 1;
-}
-.container .demoText {
-  position: relative;
-  cursor: pointer;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  transition: width 0.8s ease-out;
-  text-transform: uppercase;
-  white-space: nowrap;
-  color: transparent;
   font: 800 80px "Roboto", sans-serif;
-  z-index: 9;
-  transition: letter-spacing 0.0001s ease-out;
-  letter-spacing: 0.1em;
-}
-.container .labelContainer:hover .demoText {
-  letter-spacing: 0px;
-}
-.container .demoText::after,
-.container .demoText::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: attr(data-att);
+  text-align: left;
   text-transform: uppercase;
-  white-space: nowrap;
-  color: black;
-  font: 800 80px "Roboto", sans-serif;
-  overflow: hidden;
-  transition: all 0.8s ease-out;
-}
-.container .demoText::after {
-  -webkit-text-stroke: 2px black;
-  color: transparent;
-}
-.container .demoText::before {
-  z-index: 11;
-  color: black;
-  width: 0px;
-}
-.container .labelContainer:hover .demoText::before {
-  transition: all 0.8s ease-out;
-  width: 100%;
-}
-@media only screen and (max-width: 700px) {
-  .container .index {
-    font-size: 30px;
-  }
-  .container .demoText {
-    font: 800 40px "Roboto", sans-serif;
-  }
-  .container .demoText::after, .container .demoText::before {
-    font-size: 40px;
-  }
+  transition: all 0.3s ease-out;
+  margin: auto;
+  color: #000000;
+  cursor: none;
+  transform-origin: left;
+  padding: 10px 25px;
 }
 
 .page_container {
@@ -143,6 +68,7 @@
   transition: all 0.3s cubic-bezier(0.96, -0.01, 0.58, 1);
 }
 .page_container .inspect_container .demo {
+  background-color: #ffffff;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -157,24 +83,24 @@
   justify-content: center;
 }
 .page_container .inspect_container .demo .canvas .labelContainer {
-  position: relative;
-  top: 0;
-  left: 0;
-  transform: translate(0, 0);
-  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
-.page_container .inspect_container .demo .canvas .labelContainer .index {
-  font-size: 14px;
+.page_container .inspect_container .demo .canvas .labelContainer p {
+  font: 800 20px "Roboto", sans-serif;
   margin-right: 5px;
 }
-.page_container .inspect_container .demo .canvas .labelContainer .demoText {
+.page_container .inspect_container .demo .canvas .labelContainer h1 {
   font-size: 20px;
+  transition: all 0.3s ease-in-out;
+  color: #000000;
+  transition: all 0.3s ease-in-out;
+  transform-origin: left;
 }
-.page_container .inspect_container .demo .canvas .labelContainer .demoText::after, .page_container .inspect_container .demo .canvas .labelContainer .demoText::before {
-  font-size: 20px;
-}
-.page_container .inspect_container .demo .canvas .labelContainer .demoText::after {
-  -webkit-text-stroke: 0.8px black;
+.page_container .inspect_container .demo .canvas .labelContainer h1:hover {
+  transform: scaleX(1.2);
 }
 .page_container .inspect_container .inspect {
   max-width: 50%;

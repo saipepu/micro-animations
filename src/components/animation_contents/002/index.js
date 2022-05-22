@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import React from 'react'
 import styles from './style.module.scss'
 
-const H002 = () => {
+const H009 = () => {
   const navigate = useNavigate()
   return (
     <div className={styles.container} onClick={() => navigate('/002')}>
@@ -15,4 +15,4 @@ const H002 = () => {
   )
 }
 
-export default H002
+export default H009

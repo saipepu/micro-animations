@@ -4,95 +4,26 @@
   position: relative;
   width: 100%;
   height: 500px;
-  background-color: v.$tertiary;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
   transform-origin: top;
   @include v.flex(row, center, center);
+  background: v.$tertiary;
 
+  .label_container {
+    width: 300px;
+    display: grid;
+  }
   h1 {
-    font: 800 80px 'Roboto';
-  }
-  .labelContainer {
-    width: 20vw;
-    height: 60px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: fit-content;
-    transition: all 0.3s cubic-bezier(1, 0.14, 0.53, 0.97);
-    transition-delay: 0.3s;
-    @include v.flex(row, center, start);
-    cursor: pointer;
-  }
-  .index{
-    position: relative;
-    font: 400 50px 'Roboto',sans-serif;
-    color: black;
-    white-space: nowrap;
-    transition: all 0.8s ease-out;
-    opacity: 0.05;
-    // margin-right: 10px;
-    transform: translateX(-30px);
-  }
-  .labelContainer:hover .index{
-    transform: translateX(0);
-    transition: all 0.8s ease-out;
-    opacity: 1;
-  }
-  .demoText {
-    position: relative;
-    cursor: pointer;
-    width: fit-content;
-    transition: width 0.8s ease-out;
-    text-transform: uppercase;
-    white-space: nowrap;
-    color: transparent;
     font: 800 80px 'Roboto',sans-serif;
-    z-index: 9;
-    transition: letter-spacing 0.0001s ease-out;
-    letter-spacing: 0.1em;
-  }
-  .labelContainer:hover .demoText{
-    letter-spacing: 0px;
-  }
-  .demoText::after,
-  .demoText::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    content: attr(data-att);
+    text-align: left;
     text-transform: uppercase;
-    white-space: nowrap;
-    color: black;
-    font: 800 80px 'Roboto',sans-serif;
-    overflow: hidden;
-    transition: all 0.8s ease-out;
-  }
-  .demoText::after {
-    -webkit-text-stroke: 2px black;
-    color: transparent;
-  }
-  .demoText::before {
-    z-index: 11;
-    color: black;
-    width: 0px;
-  }
-  .labelContainer:hover .demoText::before{
-    transition: all 0.8s ease-out;
-    width: 100%;
-  }
-  @media only screen and (max-width: 700px) {
-    .index {
-      font-size: 30px;
-    }
-    .demoText {
-      font: 800 40px 'Roboto',sans-serif;
-      &::after,&::before {
-        font-size: 40px;
-      }
-    }
+    transition: all 0.3s ease-out;
+    margin: auto;
+    color: v.$secondary;
+    cursor: none;
+    transform-origin: left;
+    padding: 10px 25px;
   }
 }
 .page_container {
@@ -124,6 +55,7 @@
       transition: all 0.3s cubic-bezier(0.96,-0.01, 0.58, 1);
     }
     .demo {
+      background-color: v.$tertiary;
       @include v.flex(row, center, center);
       .canvas {
         position: relative;
@@ -131,24 +63,21 @@
         @include v.flex(column, flex-start, center);
   
         .labelContainer{
-          position: relative;
-          top: 0;
-          left: 0;
-          transform: translate(0, 0);
-          margin-bottom: 20px;
-          .index {
-            font-size: 14px;
+          @include v.flex(row, center, center);
+          p {
+            font: 800 20px 'Roboto',sans-serif;
             margin-right: 5px;
-            // background-color: aquamarine;
           }
-          .demoText {
+          h1 {
             font-size: 20px;
-            &::after,&::before {
-              font-size: 20px;
+            transition: all 0.3s ease-in-out;
+            color: v.$secondary;
+            transition: all 0.3s ease-in-out;
+            transform-origin: left;
+
+            &:hover {
+              transform: scaleX(1.2);
             }
-          }
-          .demoText::after {
-            -webkit-text-stroke: 0.8px black;
           }
         }
       }

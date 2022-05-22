@@ -7,11 +7,11 @@
     transform-style: preserve-3d;
     transform-origin: origin;
 
-    &:hover .letter{
+    &:hover .letter08 {
       transition: all 0.4s;
-      transform: rotateX(-90deg);
+      transform: rotateY(90deg);
     }
-    .letter {
+    .letter08 {
       padding: 0px 3px;
       display: inline-block;
       position: relative;
@@ -19,20 +19,24 @@
       font: 800 80px 'Roboto',sans-serif;
       transition: all 0.4s;
       transform-style: preserve-3d;
-      transform-origin: bottom;
-      transform: rotateX(0deg);
+      transform-origin: right;
+      transform: rotateY(0deg);
+      color: v.$tertiary;
+      background: v.$secondary;
 
       &::after {
         padding: 0px 3px;
         content: attr(data-char);
         position: absolute;
-        top: 0;
+        top: 0px;
         left: 0;
         transition: all 0.4s;
-        transform-origin: bottom;
-        color: v.$tertiary;
-        background: v.$secondary;
-        transform: rotateX(90deg) translateZ(80px);
+        transform-origin: right;
+        color: v.$secondary;
+        background: v.$tertiary;
+        // background: v.$tertiary;
+        // color: v.$tertiary;
+        transform: rotateY(-90deg) translateZ(0px);
       }
     }
 }
