@@ -16,22 +16,25 @@ const H003 = () => {
     setPosY(e.pageY);
     setIsHover(true);
   }
-
   const demoCursorBig = {
-    top: `${posY}px`,
-    left: `${posX}px`,
-    transform: 'scale(5)',
-    tranitionDelay: 0.2,
-    transition: 'all 0.2s ease-out',
-    transitionTimingFunction: "ease-out",
+    transform: `translate3d(${posX}px, ${posY}px, 0) scale(5)`,
+    // top: `${posY}px`,
+    // left: `${posX}px`,
+    // tranitionDelay: 0.2,
+    // transition: 'all 0.2s ease-out',
+    // transitionTimingFunction: "ease-out",
+    willChange: 'transform'
   }
   const demoCursorSmall = {
-    top: `${posY}px`,
-    left: `${posX}px`,
-    tranitionDelay: 0.2,
-    transition: 'all 0.2s ease-out',
-    transitionTimingFunction: "ease-out",
+    transform: `translate3d(${posX}px, ${posY}px, 0) scale(1)`,
+    // top: `${posY}px`,
+    // left: `${posX}px`,
+    // tranitionDelay: 0.2,
+    // transition: 'all 0.2s ease-out',
+    // transitionTimingFunction: "ease-out",
+    willChange: 'transform'
   }
+
 
   return (
     <div className={styles.container} onClick={() => navigate('/003')} onMouseMove={(e) => handleHover(e)} onMouseLeave={() => setIsHover(false)}>

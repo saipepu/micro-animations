@@ -6,22 +6,37 @@
 }
 
 .word {
-  width: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   position: relative;
-  transition: transform 1s;
   cursor: pointer;
   transform-style: preserve-3d;
   transform-origin: origin;
+  white-space: nowrap;
 }
 .word:hover .letter {
   transition: all 0.4s;
-  transform: rotateX(-90deg);
+  font-size: 40px;
+  transform: rotateX(-90deg) skewX(5deg) skewY(20deg);
+}
+.word:hover .letter::after {
+  transition: all 0.4s;
+  font-size: 80px;
+  transform: rotateX(90deg) translateZ(80px);
 }
 .word .letter {
   padding: 0px 3px;
   display: inline-block;
   position: relative;
   margin: auto;
+  min-width: 60px;
+  min-height: 90px;
+  max-width: 60px;
+  max-height: 90px;
   font: 800 80px "Roboto", sans-serif;
   transition: all 0.4s;
   transform-style: preserve-3d;
@@ -34,9 +49,11 @@
   position: absolute;
   top: 0;
   left: 0;
+  min-width: 60px;
+  min-height: 90px;
+  max-width: 60px;
+  max-height: 90px;
   transition: all 0.4s;
   transform-origin: bottom;
-  color: #ffffff;
-  background: #000000;
   transform: rotateX(90deg) translateZ(80px);
 }/*# sourceMappingURL=style.css.map */

@@ -22,7 +22,6 @@
   width: 300px;
   display: grid;
   position: relative;
-  transition: transform 3s;
   cursor: pointer;
   transform-style: preserve-3d;
 }

@@ -21,10 +21,14 @@
     width: 20px;
     height: 20px;
     border-radius: 100%;
-    background: v.$tertiary;
-    transition: 'all 0.2s ease-out';
+    // background: v.$tertiary;
+    background: aquamarine;
+    transition-delay: 0.2s;
+    transition: all 0.2s ease-out;
     transition-timing-function: ease-out;
     transform: translate(-50%, -50%);
+    will-change: transform;
+    // will-change: left,top;
     mix-blend-mode: difference;
   }
 

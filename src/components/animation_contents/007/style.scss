@@ -1,21 +1,32 @@
 @use '../../../style/global.module.scss' as v;
 .word {
-    width: 100%;
+    width: fit-content;
+    height: fit-content;
     position: relative;
-    transition: transform 1s;
+    // transition: transform 1s;
     cursor: pointer;
     transform-style: preserve-3d;
     transform-origin: origin;
+    white-space: nowrap;
 
     &:hover .letter{
       transition: all 0.4s;
-      transform: rotateX(-90deg);
+      transform: rotateX(-90deg) skewX(5deg) skewY(20deg);
+    }
+    &:hover .letter::after {
+      transition: all 0.4s;
+      font-size: 80px;
+      transform: rotateX(90deg) translateZ(80px);
     }
     .letter {
       padding: 0px 3px;
       display: inline-block;
       position: relative;
       margin: auto;
+      min-width: 60px;
+      min-height: 90px;
+      max-width: 60px;
+      max-height: 90px;
       font: 800 80px 'Roboto',sans-serif;
       transition: all 0.4s;
       transform-style: preserve-3d;
@@ -28,10 +39,14 @@
         position: absolute;
         top: 0;
         left: 0;
+        min-width: 60px;
+        min-height: 90px;
+        max-width: 60px;
+        max-height: 90px;
         transition: all 0.4s;
         transform-origin: bottom;
-        color: v.$tertiary;
-        background: v.$secondary;
+        // color: v.$tertiary;
+        // background: v.$secondary;
         transform: rotateX(90deg) translateZ(80px);
       }
     }
