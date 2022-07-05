@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/micro-animations/static/css/main.2c2d5378.css",
-    "main.js": "/micro-animations/static/js/main.e759152f.js",
+    "main.css": "/micro-animations/static/css/main.f536c92b.css",
+    "main.js": "/micro-animations/static/js/main.238690f0.js",
     "index.html": "/micro-animations/index.html",
-    "main.2c2d5378.css.map": "/micro-animations/static/css/main.2c2d5378.css.map",
-    "main.e759152f.js.map": "/micro-animations/static/js/main.e759152f.js.map"
+    "main.f536c92b.css.map": "/micro-animations/static/css/main.f536c92b.css.map",
+    "main.238690f0.js.map": "/micro-animations/static/js/main.238690f0.js.map"
   },
   "entrypoints": [
-    "static/css/main.2c2d5378.css",
-    "static/js/main.e759152f.js"
+    "static/css/main.f536c92b.css",
+    "static/js/main.238690f0.js"
   ]
 }
