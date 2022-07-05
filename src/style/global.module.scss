@@ -1,5 +1,5 @@
-$primary: #FB5168;
-$secondary: #000000;
+$primary: #191308;
+$secondary: #D3D2C7;
 $tertiary: #ffffff;
 
 *, *::after, *::before {
@@ -8,10 +8,13 @@ $tertiary: #ffffff;
   box-sizing: border-box;
   font-family: 'Roboto', 'sans-serif'
 }
-// *::-webkit-scrollbar {
-//   width: 0px;
-//   display: none;
-// }
+*::-webkit-scrollbar {
+  display: none;
+}
+a {
+  text-decoration: none;
+  color: $secondary;
+}
 
 @mixin flex($direction: row, $align, $justify) {
   display: flex;

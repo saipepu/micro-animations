@@ -27,9 +27,9 @@ const Header = () => {
       </div>
       <div className={styles.menu_page} style={ham ? { clipPath: "circle(100% at 50% 50%)"} : {}}>
         <ul>
-          <li>Home</li>
-          <li>Projects</li>
-          <li>About</li>
+          <li><a href="https://saipepu.github.io/pepu" target="_blank" rel="noopener">Home</a></li>
+          <li><a href="https://saipepu.github.io/pepu">Projects</a></li>
+          <li><a href="https://saipepu.github.io/pepu">About</a></li>
         </ul>
       </div>
     </nav>

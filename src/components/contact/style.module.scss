@@ -4,6 +4,7 @@
   position: relative;
   width: 100%;
   height: 500px;
+  background-color: v.$secondary;
   @include v.flex(row, center, center);
 
   .social_media {
@@ -11,7 +12,8 @@
     @include v.flex(column, center, center);
     .wrapper {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 50px;
 
       .box {
         margin: 2px;
@@ -22,58 +24,7 @@
         cursor: pointer;
         transition: all 0.2s ease-in-out;
         &:hover {
-          background-color: #da5264;
-        }
-      }
-    }
-  }
-  .form {
-    flex-grow: 1;
-    @include v.flex(column, start, center);
-
-    .avator {
-      width: 150px;
-      height: 150px;
-      background-color: gray;
-      border-radius: 1000%;
-      margin-bottom: 40px;
-    }
-    form {
-      width: 100%;
-      @include v.flex(column, start, center);
-
-      label {
-        color: v.$secondary;
-        font: 400 24px 'Roboto Slab','sans-serif';
-        margin-bottom: 10px;
-      }
-      .input_box {
-        width: 50%;
-        @include v.flex(row, flex-end, space-between);
-
-        input,button {
-          width: 100%;
-          background-color: transparent;
-          outline: none;
-          border: none;
-          border-bottom: 1px solid black;
-          padding-bottom: 10px;
-          font: 400 24px 'Roboto','sans-serit';
-
-          &:focus {
-            outline: none;
-          }
-        }
-        button {
-          cursor: pointer;
-          padding: 10px;
-          opacity: 0.8;
-          width: fit-content;
-          transition: all 0.2s ease-in-out;
-          &:hover {
-            opacity: 1;
-            background-color: rgba(0,0,0,0.2);
-          }
+          opacity: 0.5
         }
       }
     }
@@ -102,26 +53,6 @@
             width: 50%;
             height: 50%;
             object-fit: contain;
-          }
-        }
-      }
-    }
-    .form {
-      padding: 0px 30px;
-      width: 100%;
-      @include v.flex(row, center, center);
-
-      .avator {
-        flex: none;
-        min-width: 150px;
-        margin: 0;
-      }
-      form {
-        margin: 0px 0px 0px 30px;
-        width: fit-content;
-        .input_box {
-          input {
-            width: 150px;
           }
         }
       }
