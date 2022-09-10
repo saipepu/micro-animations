@@ -4,43 +4,54 @@ import styles from './style.module.scss'
 
 const H003 = () => {
   const navigate = useNavigate()
-  const [isHover, setIsHover ] = useState(false);
   const [scale, setScale] = useState(false);
-  const [posY, setPosY] = useState(0)
-  const [posX, setPosX] = useState(0)
 
-  const handleHover = (e) => {
-    console.log(e.pageX)
-    console.log(e.pageY);
-    setPosX(e.pageX);
-    setPosY(e.pageY);
-    setIsHover(true);
+  const lerp = (start, end, factor) => {
+    return start + (end-start) * factor
   }
-  const demoCursorBig = {
-    transform: `translate3d(${posX}px, ${posY}px, 0) scale(5)`,
-    // top: `${posY}px`,
-    // left: `${posX}px`,
-    // tranitionDelay: 0.2,
-    // transition: 'all 0.2s ease-out',
-    // transitionTimingFunction: "ease-out",
-    willChange: 'transform'
+  let mouseX = 0
+  let mouseY = 0
+  let easeX = 0
+  let easeY = 0
+  let factor = 0.08
+  window.addEventListener('mousemove', (e) => {
+    mouseX = e.pageX
+    mouseY = e.pageY
+  })
+
+  const mouseMovement = () => {
+    const demo_cursor = document.getElementById('demo_cursor')
+    console.log(demo_cursor)
+    
+    if(demo_cursor) {
+      const width = demo_cursor.getBoundingClientRect().width /2
+      const height = demo_cursor.getBoundingClientRect().height /2
+      easeX = lerp(easeX, mouseX, factor)
+      easeY = lerp(easeY, mouseY, factor)
+      let x = `translate(${easeX - width}px, ${easeY - height}px)`
+      demo_cursor.style.transform = x
+    }
+    requestAnimationFrame(mouseMovement)
   }
-  const demoCursorSmall = {
-    transform: `translate3d(${posX}px, ${posY}px, 0) scale(1)`,
-    // top: `${posY}px`,
-    // left: `${posX}px`,
-    // tranitionDelay: 0.2,
-    // transition: 'all 0.2s ease-out',
-    // transitionTimingFunction: "ease-out",
-    willChange: 'transform'
+
+  if(document.querySelector('body') != null) {
+    mouseMovement()
   }
 
 
   return (
-    <div className={styles.container} onClick={() => navigate('/003')} onMouseMove={(e) => handleHover(e)} onMouseLeave={() => setIsHover(false)}>
-      <div className={styles.demo_cursor} style={isHover ? scale ? demoCursorBig : demoCursorSmall : {display: 'none'}}></div>
+    <div className={styles.container} onClick={() => navigate('/003')}
+      // onMouseMove={(e) => handleHover(e)} onMouseLeave={() => setIsHover(false)}
+    >
       <div className={styles.label_container}>
-        <h1 className={styles.demoText} onMouseOver={() => setScale(true)} onMouseLeave={() => setScale(false)}>Hover</h1>
+        <h1 className={styles.demoText}
+          // onMouseOver={() => setScale(true)} onMouseLeave={() => setScale(false)}
+        >
+      <div className={styles.demo_cursor} id="demo_cursor"
+      //  style={isHover ? scale ? demoCursorBig : demoCursorSmall : {display: 'none'}}
+      ></div>
+          Hover
+        </h1>
       </div>
     </div>
   )

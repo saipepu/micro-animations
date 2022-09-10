@@ -13,6 +13,7 @@
     display: block;
   }
   .demo_cursor {
+    display: none;
     pointer-events: none;
     user-select: none;
     position: absolute;
@@ -22,13 +23,13 @@
     height: 20px;
     border-radius: 100%;
     background: v.$tertiary;
-    transition-delay: 0.2s;
-    transition: all 0.2s ease-out;
     transition-timing-function: ease-out;
-    transform: translate(-50%, -50%);
     will-change: transform;
-    // will-change: left,top;
     mix-blend-mode: difference;
+    // transition: width,height 0.1s ease-in;
+    // transition-delay: 0.2s;
+    // transition: all 0.2s ease-out;
+    // transform: translate(-50%, -50%);
   }
 
   .label_container {
@@ -46,6 +47,14 @@
         color: v.$secondary;
         cursor: pointer;
         transform-origin: left;
+
+        &:hover .demo_cursor {
+          background: blue;
+          width: 100px;
+          height: 100px;
+          // transform: scale(2);
+          // transition: all 0.1s ease-in;
+        }
       }
   }
 }
